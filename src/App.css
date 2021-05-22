@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .App-logo {

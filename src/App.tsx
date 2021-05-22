@@ -1,15 +1,12 @@
+import { Box } from '@material-ui/core';
 import React from 'react';
 import './App.css';
+import Navbar from './components/Navbar.component';
 
 function App() {
   return (
-    <div className="App">
-      Features
-      Pricing
-      Resources
-
-      Login
-      Sign Up
+    <Box className="App">
+      <Navbar/>
 
       More than just shorter links
 
@@ -65,11 +62,11 @@ function App() {
       Careers
       Contact
 
-      <div className="attribution">
+      <Box className="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>.
         Coded by <a href="https://github.com/seren1ty">Seren1ty</a>.
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
