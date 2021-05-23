@@ -4,7 +4,7 @@ import ShortenerBackground from '../assets/images/bg-shorten-desktop.svg';
 
 const LinkShortener = () => {
   return (
-    <Box px={20} pt={10} pb={20}>
+    <Box px={20} pt={2} pb={20}>
       <Box position="relative" display="flex" justifyContent="center" alignItems="center" height={168} px={8} py={0}>
         <Box position="absolute" zIndex={-1} bgcolor="hsl(257, 27%, 26%)" height={168} borderRadius="10px" overflow="hidden">
           <img src={ShortenerBackground} alt="Shortener Background"/>
