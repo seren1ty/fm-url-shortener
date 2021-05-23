@@ -1,4 +1,5 @@
 import { Box } from '@material-ui/core';
+import styled from 'styled-components';
 import './App.css';
 import AdvancedStatistics from './components/AdvancedStatistics.component';
 import Header from './components/Header.component';
@@ -9,11 +10,15 @@ import Navbar from './components/Navbar.component';
 function App() {
   return (
     <Box className="App">
-      <Navbar/>
-      <Header/>
-      <LinkShortener/>
-      <AdvancedStatistics/>
-      <Highlights/>
+      <HeadContainer overflow="hidden">
+        <Navbar/>
+        <Header/>
+      </HeadContainer>
+      <MainContainer>
+        <LinkShortener/>
+        <AdvancedStatistics/>
+        <Highlights/>
+      </MainContainer>
       Boost your links today
 
       Get Started
@@ -46,3 +51,15 @@ function App() {
 }
 
 export default App;
+
+const HeadContainer = styled(Box)`
+  overflow: hidden;
+`
+
+const MainContainer = styled(Box)`
+  width: 100%;
+  background: hsl(257, 7%, 95%);
+  position: relative;
+  z-index: -2;
+  margin-top: 120px;
+`

@@ -63,7 +63,7 @@ const Highlight = styled(Box)`
   min-width: 216px;
   height: 150px;
   padding: 70px 30px 30px 30px;
-  background: gray;
+  background: white;
   border-radius: 5px;
   position: relative;
 `
