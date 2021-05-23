@@ -3,7 +3,7 @@ import BoostBackground from '../assets/images/bg-boost-desktop.svg';
 
 const Boost = () => {
   return (
-    <Box position="relative" display="flex" flexDirection="column" justifyContent="center" alignItems="center" px={20} py={10}>
+    <Box position="relative" display="flex" flexDirection="column" justifyContent="center" alignItems="center" px={20} pt={10} pb={7}>
       <Box position="absolute" zIndex={-1} bgcolor="hsl(257, 27%, 26%)" height={240} overflow="hidden">
           <img src={BoostBackground} alt="Boost Background"/>
         </Box>

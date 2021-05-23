@@ -31,13 +31,16 @@ const ShortenerContainer = styled(Box)`
 `
 
 const StyledInput = styled.input`
-  background-color: white;
   border: 0;
   border-radius: 10px;
   width: 100%;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 50%);
   font-size: 20px;
   font-weight: 700;
   outline: 0;
   padding: 18px 30px;
+
+  ::placeholder {
+    color: hsl(0, 0%, 50%);
+  }
 `

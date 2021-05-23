@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import AdvancedStatistics from './components/AdvancedStatistics.component';
 import Boost from './components/Boost.component';
+import Footer from './components/Footer.component';
 import Header from './components/Header.component';
 import Highlights from './components/Highlights.component';
 import LinkShortener from './components/LinkShortener.component';
@@ -20,26 +21,8 @@ function App() {
         <AdvancedStatistics/>
         <Highlights/>
         <Boost/>
+        <Footer/>
       </MainContainer>
-      Features
-
-      Link Shortening
-      Branded Links
-      Analytics
-
-      Resources
-
-      Blog
-      Developers
-      Support
-
-      Company
-
-      About
-      Our Team
-      Careers
-      Contact
-
       <Box className="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>.
         Coded by <a href="https://github.com/seren1ty">Seren1ty</a>.
