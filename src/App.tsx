@@ -2,6 +2,7 @@ import { Box } from '@material-ui/core';
 import './App.css';
 import AdvancedStatistics from './components/AdvancedStatistics.component';
 import Header from './components/Header.component';
+import Highlights from './components/Highlights.component';
 import LinkShortener from './components/LinkShortener.component';
 import Navbar from './components/Navbar.component';
 
@@ -12,21 +13,7 @@ function App() {
       <Header/>
       <LinkShortener/>
       <AdvancedStatistics/>
-      Brand Recognition
-
-      Boost your brand recognition with each click. Generic links don’t
-      mean a thing. Branded links help instil confidence in your content.
-
-      Detailed Records
-
-      Gain insights into who is clicking your links. Knowing when and where
-      people engage with your content helps inform better decisions.
-
-      Fully Customizable
-
-      Improve brand awareness and content discoverability through customizable
-      links, supercharging audience engagement.
-
+      <Highlights/>
       Boost your links today
 
       Get Started
