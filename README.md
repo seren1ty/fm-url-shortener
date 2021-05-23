@@ -1,5 +1,5 @@
-# Frontend Mentor - Shortly URL shortening API Challenge
+# Frontend Mentor - Shortly URL shortener
 
-![Design preview for the Shortly URL shortening API coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Shortly URL shortener](./design/desktop-preview.jpg)
 
 URL shortening service written with React, Typescript, Material-UI, styled-components and SASS.
