@@ -2,18 +2,15 @@ import { Box } from '@material-ui/core';
 import React from 'react';
 import './App.css';
 import Header from './components/Header.component';
+import LinkShortener from './components/LinkShortener.component';
 import Navbar from './components/Navbar.component';
 
 function App() {
   return (
-    <Box className="App" px={20}>
+    <Box className="App">
       <Navbar/>
       <Header/>
-
-      Shorten a link here...
-
-      Shorten It!
-
+      <LinkShortener/>
       Advanced Statistics
 
       Track how your links are performing across the web with our

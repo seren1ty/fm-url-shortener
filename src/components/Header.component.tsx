@@ -3,7 +3,7 @@ import WorkingImage from '../assets/images/illustration-working.svg';
 
 const Header = () => {
   return (
-    <Box display="flex" justifyContent="space-between" paddingY={4}>
+    <Box display="flex" justifyContent="space-between" px={20} py={4}>
       <Box display="flex" flexDirection="column" alignItems="flex-start" flexWrap={true} minWidth="550px" maxWidth="50%" pt={8}>
         <Box color="hsl(255, 11%, 22%)" fontWeight={700} fontSize={70} textAlign="left" lineHeight={1.1}>
           More than just shorter links
@@ -18,7 +18,7 @@ const Header = () => {
 
       <Box display="flex">
         <Box pl={10} mr={-30}>
-          <img src={WorkingImage} alt="Working Image"/>
+          <img src={WorkingImage} alt="Working"/>
         </Box>
       </Box>
     </Box>

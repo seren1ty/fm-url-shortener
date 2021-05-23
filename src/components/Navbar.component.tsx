@@ -3,7 +3,7 @@ import ShortlyTitle from '../assets/images/logo.svg';
 
 const Navbar = () => {
   return (
-    <Box display="flex" justifyContent="space-between" paddingY={5} color="hsl(0, 0%, 70%)" fontWeight={700} fontSize={15}>
+    <Box display="flex" justifyContent="space-between" px={20} py={5} color="hsl(0, 0%, 70%)" fontWeight={700} fontSize={15}>
       <Box display="flex">
         <Box pr={6}>
           <img src={ShortlyTitle} alt="Shortly Logo"/>
