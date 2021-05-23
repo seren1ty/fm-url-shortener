@@ -58,6 +58,6 @@ const MainContainer = styled(Box)`
   width: 100%;
   background: hsl(257, 7%, 95%);
   position: relative;
-  z-index: -2;
+  z-index: 0;
   margin-top: 120px;
 `
