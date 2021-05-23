@@ -2,6 +2,7 @@ import { Box } from '@material-ui/core';
 import styled from 'styled-components';
 import './App.css';
 import AdvancedStatistics from './components/AdvancedStatistics.component';
+import Boost from './components/Boost.component';
 import Header from './components/Header.component';
 import Highlights from './components/Highlights.component';
 import LinkShortener from './components/LinkShortener.component';
@@ -18,11 +19,8 @@ function App() {
         <LinkShortener/>
         <AdvancedStatistics/>
         <Highlights/>
+        <Boost/>
       </MainContainer>
-      Boost your links today
-
-      Get Started
-
       Features
 
       Link Shortening
