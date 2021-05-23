@@ -1,6 +1,6 @@
 import { Box } from '@material-ui/core';
-import React from 'react';
 import './App.css';
+import AdvancedStatistics from './components/AdvancedStatistics.component';
 import Header from './components/Header.component';
 import LinkShortener from './components/LinkShortener.component';
 import Navbar from './components/Navbar.component';
@@ -11,11 +11,7 @@ function App() {
       <Navbar/>
       <Header/>
       <LinkShortener/>
-      Advanced Statistics
-
-      Track how your links are performing across the web with our
-      advanced statistics dashboard.
-
+      <AdvancedStatistics/>
       Brand Recognition
 
       Boost your brand recognition with each click. Generic links don’t
