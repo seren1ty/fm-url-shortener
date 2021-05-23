@@ -1,6 +1,8 @@
 import { Box } from '@material-ui/core';
 import styled from 'styled-components';
 import BrandRecognitionImage from '../assets/images/icon-brand-recognition.svg';
+import DetailedRecordsImage from '../assets/images/icon-detailed-records.svg';
+import FullyCustomisableImage from '../assets/images/icon-fully-customizable.svg';
 
 const Highlights = () => {
   return (
@@ -20,7 +22,7 @@ const Highlights = () => {
 
       <Highlight alignSelf="center">
         <IconContainer>
-          <img src={BrandRecognitionImage} alt="Brand Recognition"/>
+          <img src={DetailedRecordsImage} alt="Detailed Records"/>
         </IconContainer>
         <Box color="hsl(255, 11%, 22%)" fontWeight={700} fontSize={22} textAlign="left" lineHeight={1.1} pb={2}>
           Detailed Records
@@ -32,7 +34,7 @@ const Highlights = () => {
 
       <Highlight alignSelf="flex-end">
         <IconContainer>
-          <img src={BrandRecognitionImage} alt="Brand Recognition"/>
+          <img src={FullyCustomisableImage} alt="Fully Customisable"/>
         </IconContainer>
         <Box color="hsl(255, 11%, 22%)" fontWeight={700} fontSize={22} textAlign="left" lineHeight={1.1} pb={2}>
           Fully Customizable
