@@ -1,4 +1,4 @@
-# Frontend Mentor - Shortly URL shortener
+# Shortly URL shortener
 
 ![Design preview for the Shortly URL shortener](./design/desktop-preview.jpg)
 
