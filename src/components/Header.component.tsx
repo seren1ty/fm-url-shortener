@@ -11,7 +11,7 @@ const Header = () => {
         <Box color="hsl(0, 0%, 70%)" fontSize={20} lineHeight={1.7} textAlign="left" maxWidth="500px" pb={4}>
           Build your brand’s recognition and get detailed insights on how your links are performing.
         </Box>
-        <Box bgcolor="hsl(180, 66%, 49%)" width={180} height={50} color="white" borderRadius={50} lineHeight={3.2}>
+        <Box bgcolor="hsl(180, 66%, 49%)" width={180} height={50} color="white" borderRadius={50} lineHeight={2.8}>
           Get Started
         </Box>
       </Box>
