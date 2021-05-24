@@ -42,6 +42,7 @@ const LinkShortener = () => {
           </ShortenButton>
         </Box>
       </Box>
+      {/* Extract to new ShortenedResults component */}
       <ShortenedResultContainer>
       {
         shortenedUrls && shortenedUrls.length > 0 &&
