@@ -10,7 +10,7 @@ const Boost = () => {
       <Box color="white" fontWeight={700} fontSize={40} textAlign="left" lineHeight={1.1} pb={4}>
         Boost your links today
       </Box>
-      <Box bgcolor="hsl(180, 66%, 49%)" width={180} height={50} color="white" borderRadius={50} lineHeight={2.8}>
+      <Box bgcolor="hsl(180, 66%, 49%)" width={180} height={50} color="white" borderRadius={50} lineHeight={3.2}>
         Get Started
       </Box>
     </Box>
