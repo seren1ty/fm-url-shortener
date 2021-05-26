@@ -7,7 +7,7 @@ import FullyCustomisableImage from '../assets/images/icon-fully-customizable.svg
 const Highlights = () => {
   return (
     <HighlightContainer>
-      <Box width="500px" height="10px" bgcolor="hsl(180, 66%, 49%)" position="absolute" top="50%"></Box>
+      <HorizontalLine width="500px" height="10px" bgcolor="hsl(180, 66%, 49%)" position="absolute" top="50%"></HorizontalLine>
       <Highlight alignSelf="flex-start">
         <IconContainer>
           <img src={BrandRecognitionImage} alt="Brand Recognition"/>
@@ -58,6 +58,20 @@ const HighlightContainer = styled(Box)`
   gap: 25px;
   padding: 80px 160px;
   position: relative;
+
+  @media (max-width: 1376px) {
+    margin-bottom: 130px;
+  }
+
+  @media (max-width: 1021px) {
+    margin-bottom: 400px;
+  }
+`
+
+const HorizontalLine = styled(Box)`
+  @media (max-width: 1021px) {
+    display: none;
+  }
 `
 
 const Highlight = styled(Box)`
