@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Box, Button } from '@material-ui/core';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components';
 import ShortenerBackground from '../assets/images/bg-shorten-desktop.svg';
 
@@ -8,24 +9,34 @@ type ShortenedUrl = {
   result: string;
 };
 
+type FormValues = {
+  newUrl: string;
+}
+
 const LinkShortener = () => {
 
-  const [newUrl, setNewUrl] = useState<string>("");
   const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrl[]>([]);
 
   // TODO Load last 3 results from localstorage
 
-  const onClickShorten = useCallback(() => {
-    // TODO Shorten URL
-    const result = "http://SFJNEenj43";
-    setShortenedUrls([...shortenedUrls, { original: newUrl, result }]);
-    // TODO Store last 3 results in list in localstorage
-  }, [newUrl, shortenedUrls]);
-
-  const onClickCopy = (url: string) => {
+  const onClickCopy = useCallback((url: string) => {
     // TODO Change copy button to 'Copied!'
     navigator.clipboard.writeText(url);
-  };
+  }, []);
+
+  const handleValidate = useCallback((values: FormValues) => {
+    if (!values.newUrl)
+      return { newUrl: "Please add a link" };
+    return {};
+  }, []);
+
+  const handleSubmit = useCallback((values: FormValues, { setSubmitting }: any) => {
+    setTimeout(() => {
+      const result = "http://SFJNEenj43";
+      setShortenedUrls([...shortenedUrls, { original: values.newUrl, result }]);
+      setSubmitting(false);
+    }, 500);
+  }, [shortenedUrls]);
 
   return (
     <ShortenerContainer>
@@ -33,13 +44,22 @@ const LinkShortener = () => {
         <Box position="absolute" zIndex={-1} bgcolor="hsl(257, 27%, 26%)" height={168} borderRadius="10px" overflow="hidden">
           <img src={ShortenerBackground} alt="Shortener Background"/>
         </Box>
-        <Box display="flex" alignItems="center" width="100%" fontWeight={700}>
-          <Box flexGrow={1} minWidth={200} lineHeight={1.1} mr={11}>
-            <StyledInput value={newUrl} onChange={(value) => setNewUrl(value.currentTarget.value)} placeholder="Shorten a link here..." />
-          </Box>
-          <ShortenButton onClick={onClickShorten}>
-            Shorten It!
-          </ShortenButton>
+        <Box width="100%">
+          <Formik initialValues={{ newUrl: "" }} validate={handleValidate} onSubmit={handleSubmit}>
+          {({ isSubmitting }) => (
+            <Form>
+              <Box display="flex" alignItems="center" width="100%">
+                <Box flexGrow={1} minWidth={200} lineHeight={1.1} mr={11} position="relative">
+                  <StyledField name="newUrl" placeholder="Shorten a link here..." />
+                  <StyledErrorMessage name="newUrl" component="div" />
+                </Box>
+                <ShortenSubmit type="submit" disabled={isSubmitting}>
+                  Shorten It!
+                </ShortenSubmit>
+              </Box>
+            </Form>
+          )}
+          </Formik>
         </Box>
       </Box>
       {/* Extract to new ShortenedResults component */}
@@ -77,7 +97,7 @@ const ShortenerContainer = styled(Box)`
   margin: 16px 165px 30px 165px;
 `
 
-const StyledInput = styled.input`
+const StyledField = styled(Field)`
   border: 0;
   border-radius: 10px;
   width: 100%;
@@ -92,7 +112,14 @@ const StyledInput = styled.input`
   }
 `
 
-const ShortenButton = styled(Button)`
+const StyledErrorMessage = styled(ErrorMessage)`
+  position: absolute;
+  bottom: -25px;
+  color: hsl(0, 87%, 67%);
+  font-style: italic;
+`
+
+const ShortenSubmit = styled(Button)`
   background: hsl(180, 66%, 49%);
   color: white;
   min-width: 160px;
