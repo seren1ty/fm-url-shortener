@@ -3,10 +3,17 @@ import { Box, Button } from '@material-ui/core';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components';
 import ShortenerBackground from '../assets/images/bg-shorten-desktop.svg';
+import axios from 'axios';
 
 type ShortenedUrl = {
   original: string;
   result: string;
+};
+
+type BitlyResult = {
+  data: {
+    link: string;
+  }
 };
 
 type FormValues = {
@@ -30,12 +37,15 @@ const LinkShortener = () => {
     return {};
   }, []);
 
-  const handleSubmit = useCallback((values: FormValues, { setSubmitting }: any) => {
-    setTimeout(() => {
-      const result = "http://SFJNEenj43";
-      setShortenedUrls([...shortenedUrls, { original: values.newUrl, result }]);
-      setSubmitting(false);
-    }, 500);
+  const handleSubmit = useCallback(async (values: FormValues, { setSubmitting }: any) => {
+    const requestData = JSON.stringify({ long_url: values.newUrl });
+    const requestOptions = { headers: { "Content-Type": "application/json", "Authorization": "Bearer " + process.env.REACT_APP_BITLY_AUTH_TOKEN }};
+
+    const result: BitlyResult = await axios.post("https://api-ssl.bitly.com/v4/shorten", requestData, requestOptions);
+
+    setShortenedUrls([...shortenedUrls, { original: values.newUrl, result: result.data.link }]);
+
+    setSubmitting(false);
   }, [shortenedUrls]);
 
   return (
