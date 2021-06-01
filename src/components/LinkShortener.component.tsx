@@ -56,11 +56,11 @@ const LinkShortener = () => {
         </Box>
         <Box width="100%">
           <Formik initialValues={{ newUrl: "" }} validate={handleValidate} onSubmit={handleSubmit}>
-          {({ isSubmitting }) => (
+          {({ errors, isSubmitting }) => (
             <Form>
               <Box display="flex" alignItems="center" width="100%">
                 <Box flexGrow={1} minWidth={200} lineHeight={1.1} mr={11} position="relative">
-                  <StyledField name="newUrl" placeholder="Shorten a link here..." />
+                  <StyledField name="newUrl" placeholder="Shorten a link here..." inError={!!errors.newUrl} />
                   <StyledErrorMessage name="newUrl" component="div" />
                 </Box>
                 <ShortenSubmit type="submit" disabled={isSubmitting}>
@@ -116,9 +116,12 @@ const StyledField = styled(Field)`
   font-weight: 700;
   outline: 0;
   padding: 18px 30px;
+  ${props => props.inError && "box-shadow: 0 0 0 3px hsl(0, 87%, 67%) inset;"}
 
   ::placeholder {
-    color: hsl(0, 0%, 50%);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: ${props => props.inError ? "hsl(0, 87%, 77%)" : "hsl(0, 0%, 50%)"};
   }
 `
 

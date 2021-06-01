@@ -68,6 +68,7 @@ const FooterContainer = styled(Box)`
   color: hsl(257, 7%, 95%);
   font-size: 14px;
   padding: 32px 160px;
+  gap: 20px;
 `
 
 const Logo = styled(Box)`
