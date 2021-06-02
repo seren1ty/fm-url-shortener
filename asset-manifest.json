@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/fm-url-shortener/static/css/main.3a61321a.chunk.css",
-    "main.js": "/fm-url-shortener/static/js/main.7ae1b220.chunk.js",
-    "main.js.map": "/fm-url-shortener/static/js/main.7ae1b220.chunk.js.map",
-    "runtime-main.js": "/fm-url-shortener/static/js/runtime-main.4d84dd37.js",
-    "runtime-main.js.map": "/fm-url-shortener/static/js/runtime-main.4d84dd37.js.map",
-    "static/js/2.6d786943.chunk.js": "/fm-url-shortener/static/js/2.6d786943.chunk.js",
-    "static/js/2.6d786943.chunk.js.map": "/fm-url-shortener/static/js/2.6d786943.chunk.js.map",
-    "static/js/3.ccca5c97.chunk.js": "/fm-url-shortener/static/js/3.ccca5c97.chunk.js",
-    "static/js/3.ccca5c97.chunk.js.map": "/fm-url-shortener/static/js/3.ccca5c97.chunk.js.map",
+    "main.css": "/fm-url-shortener/static/css/main.0685d022.chunk.css",
+    "main.js": "/fm-url-shortener/static/js/main.2e7628cd.chunk.js",
+    "main.js.map": "/fm-url-shortener/static/js/main.2e7628cd.chunk.js.map",
+    "runtime-main.js": "/fm-url-shortener/static/js/runtime-main.2cfd4c23.js",
+    "runtime-main.js.map": "/fm-url-shortener/static/js/runtime-main.2cfd4c23.js.map",
+    "static/js/2.492e925f.chunk.js": "/fm-url-shortener/static/js/2.492e925f.chunk.js",
+    "static/js/2.492e925f.chunk.js.map": "/fm-url-shortener/static/js/2.492e925f.chunk.js.map",
+    "static/js/3.426a41e1.chunk.js": "/fm-url-shortener/static/js/3.426a41e1.chunk.js",
+    "static/js/3.426a41e1.chunk.js.map": "/fm-url-shortener/static/js/3.426a41e1.chunk.js.map",
     "index.html": "/fm-url-shortener/index.html",
-    "static/css/main.3a61321a.chunk.css.map": "/fm-url-shortener/static/css/main.3a61321a.chunk.css.map",
-    "static/js/2.6d786943.chunk.js.LICENSE.txt": "/fm-url-shortener/static/js/2.6d786943.chunk.js.LICENSE.txt",
+    "static/css/main.0685d022.chunk.css.map": "/fm-url-shortener/static/css/main.0685d022.chunk.css.map",
+    "static/js/2.492e925f.chunk.js.LICENSE.txt": "/fm-url-shortener/static/js/2.492e925f.chunk.js.LICENSE.txt",
     "static/media/bg-boost-desktop.772154c9.svg": "/fm-url-shortener/static/media/bg-boost-desktop.772154c9.svg",
     "static/media/bg-shorten-desktop.0d9742f4.svg": "/fm-url-shortener/static/media/bg-shorten-desktop.0d9742f4.svg",
     "static/media/icon-brand-recognition.c349d3b6.svg": "/fm-url-shortener/static/media/icon-brand-recognition.c349d3b6.svg",
@@ -25,9 +25,9 @@
     "static/media/logo.83464303.svg": "/fm-url-shortener/static/media/logo.83464303.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4d84dd37.js",
-    "static/js/2.6d786943.chunk.js",
-    "static/css/main.3a61321a.chunk.css",
-    "static/js/main.7ae1b220.chunk.js"
+    "static/js/runtime-main.2cfd4c23.js",
+    "static/js/2.492e925f.chunk.js",
+    "static/css/main.0685d022.chunk.css",
+    "static/js/main.2e7628cd.chunk.js"
   ]
 }
