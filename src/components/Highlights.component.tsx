@@ -59,17 +59,17 @@ const HighlightContainer = styled(Box)`
   padding: 80px 160px;
   position: relative;
 
-  @media (max-width: 1376px) {
+  @media (max-width: 1392px) {
     margin-bottom: 130px;
   }
 
-  @media (max-width: 1021px) {
+  @media (max-width: 1037px) {
     margin-bottom: 400px;
   }
 `
 
 const HorizontalLine = styled(Box)`
-  @media (max-width: 1021px) {
+  @media (max-width: 1037px) {
     display: none;
   }
 `
