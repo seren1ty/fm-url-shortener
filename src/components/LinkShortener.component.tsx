@@ -60,7 +60,7 @@ const LinkShortener = () => {
             <Form>
               <Box display="flex" alignItems="center" width="100%">
                 <Box flexGrow={1} minWidth={200} lineHeight={1.1} mr={11} position="relative">
-                  <StyledField name="newUrl" placeholder="Shorten a link here..." inError={!!errors.newUrl} />
+                  <StyledField name="newUrl" placeholder="Shorten a link here..." inerror={errors.newUrl} />
                   <StyledErrorMessage name="newUrl" component="div" />
                 </Box>
                 <ShortenSubmit type="submit" disabled={isSubmitting}>
@@ -134,12 +134,12 @@ const StyledField = styled(Field)`
   font-weight: 700;
   outline: 0;
   padding: 18px 30px;
-  ${props => props.inError && "box-shadow: 0 0 0 3px hsl(0, 87%, 67%) inset;"}
+  ${props => props.inerror && "box-shadow: 0 0 0 3px hsl(0, 87%, 67%) inset;"}
 
   ::placeholder {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    color: ${props => props.inError ? "hsl(0, 87%, 77%)" : "hsl(0, 0%, 50%)"};
+    color: ${props => props.inerror ? "hsl(0, 87%, 77%)" : "hsl(0, 0%, 50%)"};
   }
 `
 
