@@ -50,10 +50,10 @@ const LinkShortener = () => {
 
   return (
     <ShortenerContainer>
-      <Box position="relative" display="flex" justifyContent="center" alignItems="center" height={168} px={8} py={0}>
-        <Box position="absolute" zIndex={-1} bgcolor="hsl(257, 27%, 26%)" height={168} borderRadius="10px" overflow="hidden">
+      <ShortenerInputContainer>
+        <BackgroundContainer>
           <img src={ShortenerBackground} alt="Shortener Background"/>
-        </Box>
+        </BackgroundContainer>
         <Box width="100%">
           <Formik initialValues={{ newUrl: "" }} validate={handleValidate} onSubmit={handleSubmit}>
           {({ errors, isSubmitting }) => (
@@ -71,7 +71,7 @@ const LinkShortener = () => {
           )}
           </Formik>
         </Box>
-      </Box>
+      </ShortenerInputContainer>
       {/* Extract to new ShortenedResults component */}
       <ShortenedResultContainer>
       {
@@ -107,6 +107,24 @@ const ShortenerContainer = styled(Box)`
   margin: 16px 165px 30px 165px;
 `
 
+const ShortenerInputContainer = styled(Box)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 168px;
+  padding: 0 64px;
+`
+
+const BackgroundContainer = styled(Box)`
+  position: absolute;
+  z-index: -1;
+  background: hsl(257, 27%, 26%);
+  height: 168px;
+  border-radius: 10px;
+  overflow: hidden;
+`
+
 const StyledField = styled(Field)`
   border: 0;
   border-radius: 10px;
@@ -139,9 +157,13 @@ const ShortenSubmit = styled(Button)`
   height: 60px;
   border-radius: 10px;
   line-height: 3.4;
+  text-transform: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
 
   &:hover {
-    background: hsl(180, 66%, 44%);
+    background: hsl(180, 66%, 74%);
   }
 `
 
@@ -182,11 +204,15 @@ const CopyButton = styled(Button)`
   color: white;
   min-width: 90px;
   height: 35px;
-  border-radius: 10px;
-  line-height: 3.4;
+  border-radius: 5px;
+  line-height: 3.5;
   margin-right: 20px;
+  text-transform: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
 
   &:hover {
-    background: hsl(180, 66%, 44%);
+    background: hsl(180, 66%, 74%);
   }
 `

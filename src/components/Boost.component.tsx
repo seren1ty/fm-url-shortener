@@ -1,20 +1,60 @@
 import { Box } from '@material-ui/core';
+import styled from 'styled-components';
 import BoostBackground from '../assets/images/bg-boost-desktop.svg';
 
 const Boost = () => {
   return (
-    <Box position="relative" display="flex" flexDirection="column" justifyContent="center" alignItems="center" px={20} pt={10} pb={7}>
-      <Box position="absolute" zIndex={-1} bgcolor="hsl(257, 27%, 26%)" height={240} overflow="hidden">
-          <img src={BoostBackground} alt="Boost Background"/>
-        </Box>
-      <Box color="white" fontWeight={700} fontSize={40} textAlign="left" lineHeight={1.1} pb={4}>
+    <BoostContainer>
+      <BackgroundContainer>
+        <img src={BoostBackground} alt="Boost Background"/>
+      </BackgroundContainer>
+      <BoostTitle>
         Boost your links today
-      </Box>
-      <Box bgcolor="hsl(180, 66%, 49%)" width={180} height={50} color="white" borderRadius={50} lineHeight={2.8}>
+      </BoostTitle>
+      <BoostButton>
         Get Started
-      </Box>
-    </Box>
+      </BoostButton>
+    </BoostContainer>
   )
 }
 
 export default Boost;
+
+const BoostContainer = styled(Box)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 160px 56px 160px;
+`
+
+const BackgroundContainer = styled(Box)`
+  position: absolute;
+  z-index: -1;
+  background: hsl(257, 27%, 26%);
+  height: 240px;
+  overflow: hidden;
+`
+
+const BoostTitle = styled(Box)`
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  text-align: left;
+  line-height: 1.1;
+  padding-bottom: 32px;
+`
+
+const BoostButton = styled(Box)`
+  background: hsl(180, 66%, 49%);
+  width: 180px;
+  height: 50px;
+  color: white;
+  border-radius: 50px;
+  line-height: 2.8;
+
+  &:hover {
+    background: hsl(180, 66%, 74%);
+  }
+`

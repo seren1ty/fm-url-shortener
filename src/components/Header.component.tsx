@@ -1,28 +1,75 @@
 import { Box } from '@material-ui/core';
+import styled from 'styled-components';
 import WorkingImage from '../assets/images/illustration-working.svg';
 
 const Header = () => {
   return (
-    <Box display="flex" justifyContent="space-between" px={20} py={4}>
-      <Box display="flex" flexDirection="column" alignItems="flex-start" flexWrap="wrap" minWidth="550px" maxWidth="50%" pt={8}>
-        <Box color="hsl(255, 11%, 22%)" fontWeight={700} fontSize={70} textAlign="left" lineHeight={1.1}>
+    <HeadingContainer>
+      <HeadingPanel>
+        <Heading>
           More than just shorter links
-        </Box>
-        <Box color="hsl(0, 0%, 70%)" fontSize={20} lineHeight={1.7} textAlign="left" maxWidth="500px" pb={4}>
+        </Heading>
+        <SubHeading>
           Build your brand’s recognition and get detailed insights on how your links are performing.
-        </Box>
-        <Box bgcolor="hsl(180, 66%, 49%)" width={180} height={50} color="white" borderRadius={50} lineHeight={2.8}>
+        </SubHeading>
+        <GetStartedButton>
           Get Started
-        </Box>
-      </Box>
+        </GetStartedButton>
+      </HeadingPanel>
 
       <Box display="flex">
         <Box pl={10} mr={-30}>
           <img src={WorkingImage} alt="Working"/>
         </Box>
       </Box>
-    </Box>
+    </HeadingContainer>
   )
 }
 
 export default Header;
+
+const HeadingContainer = styled(Box)`
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 160px;
+`
+
+const HeadingPanel = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-width: 550px;
+  max-width: 50%;
+  padding-top: 64px;
+`
+
+const Heading = styled(Box)`
+  color: hsl(255, 11%, 22%);
+  font-weight: 700;
+  font-size: 70px;
+  text-align: left;
+  line-height: 1.1;
+`
+
+const SubHeading = styled(Box)`
+  color: hsl(0, 0%, 70%);
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: left;
+  max-width: 500px;
+  padding-bottom: 32px;
+`
+
+const GetStartedButton = styled(Box)`
+  background: hsl(180, 66%, 49%);
+  width: 180px;
+  height: 50px;
+  color white;
+  border-radius: 50px;
+  line-height: 2.8;
+
+  &:hover {
+    background: hsl(180, 66%, 74%);
+  }
+`

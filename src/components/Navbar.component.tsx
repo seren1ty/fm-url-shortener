@@ -1,9 +1,10 @@
 import { Box } from '@material-ui/core';
+import styled from 'styled-components';
 import ShortlyTitle from '../assets/images/logo.svg';
 
 const Navbar = () => {
   return (
-    <Box display="flex" justifyContent="space-between" px={20} py={5} color="hsl(0, 0%, 70%)" fontWeight={700} fontSize={15}>
+    <NavBar>
       <Box display="flex">
         <Box pr={6}>
           <img src={ShortlyTitle} alt="Shortly Logo"/>
@@ -23,12 +24,33 @@ const Navbar = () => {
         <Box pr={4} lineHeight={2.5}>
           Login
         </Box>
-        <Box bgcolor="hsl(180, 66%, 49%)" width={100} color="white" borderRadius={50} lineHeight={2.5}>
+        <SignUpButton>
           Sign Up
-        </Box>
+        </SignUpButton>
       </Box>
-    </Box>
+    </NavBar>
   )
 }
 
 export default Navbar;
+
+const NavBar = styled(Box)`
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 160px;
+  color: hsl(0, 0%, 70%);
+  font-weight: 700;
+  font-size: 15px;
+`
+
+const SignUpButton = styled(Box)`
+  background: hsl(180, 66%, 49%);
+  width: 100px;
+  color: white;
+  border-radius: 50px;
+  line-height: 2.5;
+
+  &:hover {
+    background: hsl(180, 66%, 74%);
+  }
+`
