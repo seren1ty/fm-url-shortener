@@ -23,9 +23,14 @@ type FormValues = {
 
 const LinkShortener = () => {
 
-  const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrl[]>([]);
+  const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrl[]>(() => {
+    const recentUrls = localStorage.getItem("linkShortener-recentUrls");
 
-  // TODO Load last 3 results from localstorage
+    if (recentUrls)
+      return JSON.parse(recentUrls);
+    else
+      return [];
+  });
 
   const handleValidate = useCallback((values: FormValues) => {
     if (!values.newUrl)
@@ -39,7 +44,18 @@ const LinkShortener = () => {
 
     const result: BitlyResult = await axios.post("https://api-ssl.bitly.com/v4/shorten", requestData, requestOptions);
 
-    setShortenedUrls([...shortenedUrls, { original: values.newUrl, result: result.data.link }]);
+    let currentUrls = shortenedUrls;
+
+    // Store at most the last 3 shortened urls
+    if (currentUrls.length === 3) {
+      currentUrls.splice(0, 1);
+    }
+
+    const updatedUrls = [...currentUrls, { original: values.newUrl, result: result.data.link }];
+
+    setShortenedUrls(updatedUrls);
+
+    localStorage.setItem("linkShortener-recentUrls", JSON.stringify(updatedUrls));
 
     setSubmitting(false);
   }, [shortenedUrls]);
