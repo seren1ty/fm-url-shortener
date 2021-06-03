@@ -6,7 +6,7 @@ import Boost from './components/Boost.component';
 import Footer from './components/Footer.component';
 import Header from './components/Header.component';
 import Highlights from './components/Highlights.component';
-import LinkShortener from './components/LinkShortener.component';
+import LinkShortener from './components/LinkShortener/LinkShortener.component';
 import Navbar from './components/Navbar.component';
 
 function App() {

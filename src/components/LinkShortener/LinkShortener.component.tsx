@@ -2,10 +2,11 @@ import { useState, useCallback } from 'react';
 import { Box, Button } from '@material-ui/core';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components';
-import ShortenerBackground from '../assets/images/bg-shorten-desktop.svg';
+import ShortenerBackground from '../../assets/images/bg-shorten-desktop.svg';
 import axios from 'axios';
+import ShortenedResults from './ShortenedResults.component';
 
-type ShortenedUrl = {
+export type ShortenedUrl = {
   original: string;
   result: string;
 };
@@ -25,11 +26,6 @@ const LinkShortener = () => {
   const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrl[]>([]);
 
   // TODO Load last 3 results from localstorage
-
-  const onClickCopy = useCallback((url: string) => {
-    // TODO Change copy button to 'Copied!'
-    navigator.clipboard.writeText(url);
-  }, []);
 
   const handleValidate = useCallback((values: FormValues) => {
     if (!values.newUrl)
@@ -72,29 +68,9 @@ const LinkShortener = () => {
           </Formik>
         </Box>
       </ShortenerInputContainer>
-      {/* Extract to new ShortenedResults component */}
-      <ShortenedResultContainer>
-      {
-        shortenedUrls && shortenedUrls.length > 0 &&
-        shortenedUrls.map((urlData, idx) =>
-          (
-            <ShortenedResultLine key={idx}>
-              <ShortenedResult>
-                <Box>
-                  {urlData.original}
-                </Box>
-                <Box color="hsl(180, 66%, 49%)">
-                  {urlData.result}
-                </Box>
-              </ShortenedResult>
-              <CopyButton onClick={() => onClickCopy(urlData.result)}>
-                Copy
-              </CopyButton>
-            </ShortenedResultLine>
-          )
-        )
-      }
-      </ShortenedResultContainer>
+
+      <ShortenedResults shortenedUrls={shortenedUrls} />
+
     </ShortenerContainer>
   )
 }
@@ -160,56 +136,6 @@ const ShortenSubmit = styled(Button)`
   text-transform: none;
   font-family: 'Poppins', sans-serif;
   font-size: 17px;
-  font-weight: 700;
-
-  &:hover {
-    background: hsl(180, 66%, 74%);
-  }
-`
-
-const ShortenedResultContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
-  font-size: 16px;
-`
-
-const ShortenedResultLine = styled(Box)`
-  width: 100%;
-  height: 50px;
-  background: white;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & > div {
-    padding: 0 20px;
-  }
-`
-
-const ShortenedResult = styled(Box)`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20px;
-`
-
-const CopyButton = styled(Button)`
-  background: hsl(180, 66%, 49%);
-  color: white;
-  min-width: 90px;
-  height: 35px;
-  border-radius: 5px;
-  line-height: 3.5;
-  margin-right: 20px;
-  text-transform: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
   font-weight: 700;
 
   &:hover {
