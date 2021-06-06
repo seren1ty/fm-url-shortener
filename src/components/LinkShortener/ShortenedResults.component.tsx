@@ -64,6 +64,16 @@ const ShortenedResultLine = styled(Box)`
   & > div {
     padding: 0 20px;
   }
+
+  @media (max-width: 799px) {
+    height: 100px;
+    align-items: flex-start;
+    flex-direction: column;
+
+    & > div {
+      padding: 0 10px;
+    }
+  }
 `
 
 const ShortenedResult = styled(Box)`
@@ -72,6 +82,11 @@ const ShortenedResult = styled(Box)`
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
+
+  @media (max-width: 799px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `
 
 const CopyButton = styled(Button)`
@@ -89,5 +104,9 @@ const CopyButton = styled(Button)`
 
   &:hover {
     background: hsl(180, 66%, 74%);
+  }
+
+  @media (max-width: 799px) {
+    width: 100%;
   }
 `
