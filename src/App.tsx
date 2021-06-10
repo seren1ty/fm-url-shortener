@@ -11,7 +11,7 @@ import Navbar from './components/Navbar.component';
 
 function App() {
   return (
-    <Box className="App">
+    <AppContainer className="App">
       <HeadContainer overflow="hidden">
         <Navbar/>
         <Header/>
@@ -27,11 +27,15 @@ function App() {
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>.
         Coded by <a href="https://github.com/seren1ty">Seren1ty</a>.
       </Box>
-    </Box>
+    </AppContainer>
   );
 }
 
 export default App;
+
+const AppContainer = styled(Box)`
+  overflow-x: hidden;
+`
 
 const HeadContainer = styled(Box)`
   overflow: hidden;

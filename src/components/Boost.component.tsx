@@ -26,7 +26,11 @@ const BoostContainer = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 160px 56px 160px;
+  margin: 80px 160px 56px 160px;
+
+  @media (max-width: 1037px) {
+    margin: 16px 20px 30px 20px;
+  }
 `
 
 const BackgroundContainer = styled(Box)`
