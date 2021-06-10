@@ -69,6 +69,16 @@ const FooterContainer = styled(Box)`
   font-size: 14px;
   padding: 32px 160px;
   gap: 20px;
+
+  @media (max-width: 1037px) {
+    padding: 32px 20px;
+  }
+
+  @media (max-width: 799px) {
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+  }
 `
 
 const Logo = styled(Box)`
@@ -78,6 +88,7 @@ const Logo = styled(Box)`
 `
 
 const MenuContainer = styled(Box)`
+  min-width: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
