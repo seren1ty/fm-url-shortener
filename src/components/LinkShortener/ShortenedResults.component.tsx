@@ -90,23 +90,25 @@ const ShortenedResult = styled(Box)`
 `
 
 const CopyButton = styled(Button)`
-  background: hsl(180, 66%, 49%);
-  color: white;
-  min-width: 90px;
-  height: 35px;
-  border-radius: 5px;
-  line-height: 3.5;
-  margin-right: 20px;
-  text-transform: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  &.MuiButton-root {
+    background: hsl(180, 66%, 49%);
+    color: white;
+    min-width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    line-height: 3.5;
+    margin-right: 20px;
+    text-transform: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
 
-  &:hover {
-    background: hsl(180, 66%, 74%);
-  }
+    &:hover {
+      background: hsl(180, 66%, 74%);
+    }
 
-  @media (max-width: 799px) {
-    width: 100%;
+    @media (max-width: 799px) {
+      width: 100%;
+    }
   }
 `

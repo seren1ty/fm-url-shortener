@@ -182,24 +182,26 @@ const StyledErrorMessage = styled(ErrorMessage)`
 `
 
 const ShortenSubmit = styled(Button)`
-  background: hsl(180, 66%, 49%);
-  color: white;
-  min-width: 160px;
-  height: 60px;
-  border-radius: 10px;
-  line-height: 3.4;
-  text-transform: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
+  &.MuiButton-root {
+    background: hsl(180, 66%, 49%);
+    color: white;
+    min-width: 160px;
+    height: 60px;
+    border-radius: 10px;
+    line-height: 3.4;
+    text-transform: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
 
-  &:hover {
-    background: hsl(180, 66%, 74%);
-  }
+    &:hover {
+      background: hsl(180, 66%, 74%);
+    }
 
-  @media (max-width: 1037px) {
-    width: 100%;
-    height: 50px;
-    border-radius: 5px;
+    @media (max-width: 1037px) {
+      width: 100%;
+      height: 50px;
+      border-radius: 5px;
+    }
   }
 `
