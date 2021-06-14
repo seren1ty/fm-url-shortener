@@ -18,9 +18,9 @@ const Header = () => {
       </HeadingPanel>
 
       <Box display="flex">
-        <Box pl={10} mr={-30}>
-          <img src={WorkingImage} alt="Working"/>
-        </Box>
+        <ImageContainer>
+          <Image src={WorkingImage} alt="Working"/>
+        </ImageContainer>
       </Box>
     </HeadingContainer>
   )
@@ -32,6 +32,15 @@ const HeadingContainer = styled(Box)`
   display: flex;
   justify-content: space-between;
   padding: 32px 160px;
+
+  @media (max-width: 1037px) {
+    padding: 32px 20px;
+  }
+
+  @media (max-width: 799px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `
 
 const HeadingPanel = styled(Box)`
@@ -42,6 +51,11 @@ const HeadingPanel = styled(Box)`
   min-width: 550px;
   max-width: 50%;
   padding-top: 64px;
+
+  @media (max-width: 799px) {
+    max-width: 270px;
+    align-items: center;
+  }
 `
 
 const Heading = styled(Box)`
@@ -50,6 +64,12 @@ const Heading = styled(Box)`
   font-size: 70px;
   text-align: left;
   line-height: 1.1;
+
+  @media (max-width: 799px) {
+    max-width: 270px;
+    font-size: 36px;
+    text-align: center;
+  }
 `
 
 const SubHeading = styled(Box)`
@@ -59,6 +79,13 @@ const SubHeading = styled(Box)`
   text-align: left;
   max-width: 500px;
   padding-bottom: 32px;
+
+  @media (max-width: 799px) {
+    padding-top: 10px;
+    max-width: 270px;
+    font-size: 14px;
+    text-align: center;
+  }
 `
 
 const GetStartedButton = styled(Box)`
@@ -72,4 +99,21 @@ const GetStartedButton = styled(Box)`
   &:hover {
     background: hsl(180, 66%, 74%);
   }
+`
+
+const ImageContainer = styled(Box)`
+  padding-left: 10px;
+  margin-right: -30px;
+
+  @media (max-width: 799px) {
+    width: 100%;
+    padding-left: 0;
+    margin-right: 0;
+  }
+`
+
+const Image = styled.img`
+@media (max-width: 799px) {
+  width: 130%;
+}
 `
