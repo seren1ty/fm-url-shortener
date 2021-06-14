@@ -93,6 +93,10 @@ const MenuContainer = styled(Box)`
   flex-direction: column;
   align-items: flex-start;
   line-height: 2.3;
+
+  @media (max-width: 799px) {
+    align-items: center;
+  }
 `
 
 const SubMenuItem = styled(Box)`
