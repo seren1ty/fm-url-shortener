@@ -66,6 +66,10 @@ const HighlightContainer = styled(Box)`
   @media (max-width: 1037px) {
     margin-bottom: 500px;
   }
+
+  @media (max-width: 652px) {
+    margin-bottom: 580px;
+  }
 `
 
 const HorizontalLine = styled(Box)`

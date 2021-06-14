@@ -66,12 +66,13 @@ const ShortenedResultLine = styled(Box)`
   }
 
   @media (max-width: 799px) {
-    height: 100px;
+    height: 120px;
     align-items: flex-start;
     flex-direction: column;
+    padding: 15px;
 
     & > div {
-      padding: 0 10px;
+      padding: 0;
     }
   }
 `
@@ -86,6 +87,7 @@ const ShortenedResult = styled(Box)`
   @media (max-width: 799px) {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
   }
 `
 
