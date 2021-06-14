@@ -48,6 +48,10 @@ const BoostTitle = styled(Box)`
   text-align: left;
   line-height: 1.1;
   padding-bottom: 32px;
+
+  @media (max-width: 799px) {
+    font-size: 24px;
+  }
 `
 
 const BoostButton = styled(Box)`
