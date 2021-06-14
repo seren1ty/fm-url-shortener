@@ -82,6 +82,10 @@ const Highlight = styled(Box)`
   background: white;
   border-radius: 5px;
   position: relative;
+
+  @media (max-width: 652px) {
+    height: 180px;
+  }
 `
 
 const IconContainer = styled(Box)`
