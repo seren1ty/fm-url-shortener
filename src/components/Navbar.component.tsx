@@ -9,8 +9,10 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const isOpen = Boolean(anchorEl);
 
+  const navBarRef = React.useRef<HTMLDivElement>(null);
+
   const handleMenu = useCallback((event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(navBarRef.current);
   }, []);
 
   const handleClose = useCallback(() => {
@@ -22,8 +24,7 @@ const Navbar = () => {
       <Box pr={6}>
         <img src={ShortlyTitle} alt="Shortly Logo"/>
       </Box>
-
-      <NavBarMenuDesktop>
+      <NavBarMenuDesktop ref={navBarRef}>
         <Box display="flex">
           <Box pr={4} lineHeight={2.5}>
             Features
@@ -70,7 +71,9 @@ const Navbar = () => {
           <MenuItem onClick={handleClose}>Resources</MenuItem>
           <Divider />
           <MenuItem onClick={handleClose}>Login</MenuItem>
-          <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+          <MenuItem onClick={handleClose}>
+            <SignUpButton>Sign Up</SignUpButton>
+          </MenuItem>
         </MenuMobile>
       </NavBarMenuMobile>
     </NavBar>
@@ -88,14 +91,14 @@ const NavBar = styled(Box)`
   font-size: 15px;
 
   @media (max-width: 1037px) {
-    padding: 40px 20px;
+    padding: 20px 10px;
   }
 
   @media (max-width: 799px) {
   }
 `
 
-const NavBarMenuDesktop = styled(Box)`
+const NavBarMenuDesktop = styled.div`
   flex-grow: 1;
   display: flex;
   justify-content: space-between;
@@ -120,12 +123,38 @@ const NavBarMenuMobile = styled(Box)`
 `
 
 const MenuMobile = styled(Menu)`
+  display: flex;
+  justify-content: center;
+
   .MuiPopover-paper {
+    position: relative;
     background: hsl(257,27%,26%);
     color: white;
-    padding: 20px 40px;
+    width: 90%;
+    height: 385px;
+    top: 100px !important;
+    left: 0 !important;
+    border-radius: 10px;
 
     .MuiMenuItem-root {
+      min-height: 70px;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+
+      .MuiBox-root {
+        padding: 0 30%;
+        text-align: center;
+      }
+    }
+
+    .MuiDivider-root {
+      border: none;
+      height: 1px;
+      width: 75%;
+      margin: auto;
+      flex-shrink: 0;
+      background-color: rgb(173 181 189);
     }
   }
 
